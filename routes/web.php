@@ -1,7 +1,11 @@
 <?php
 
+use App\Enums\ScheduleBlockType;
 use App\Http\Controllers\AppController;
 use Illuminate\Support\Facades\Route;
+
+use App\Models\ScheduleBlock;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
