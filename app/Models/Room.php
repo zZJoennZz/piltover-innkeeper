@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\AutoUuidModel as Model;
 
 class Room extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'uuid',
         'number',
         'name',
         'description',
@@ -17,6 +18,7 @@ class Room extends Model
         'rate',
         'max_capacity',
         'is_smoking_allowed',
+        'is_pet_allowed',
         'is_enabled',
         'users_id',
     ];

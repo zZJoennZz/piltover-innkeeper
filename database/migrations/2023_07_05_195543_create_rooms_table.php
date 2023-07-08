@@ -11,13 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedule_blocks', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->string('type');
+            $table->string('name');
+            $table->string('description');
+            $table->unsignedBigInteger('room_types_id');
+            $table->decimal('rate');
+            $table->integer('max_capacity');
+            $table->boolean('is_smoking_allowed');
+            $table->boolean('is_pet_allowed');
+            $table->boolean('is_enabled');
             $table->unsignedBigInteger('users_id');
             $table->timestamps();
 
+            $table->foreign('room_types_id')->references('id')->on('room_types');
             $table->foreign('users_id')->references('id')->on('users');
         });
     }
@@ -27,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schedule_blocks');
+        Schema::dropIfExists('rooms');
     }
 };

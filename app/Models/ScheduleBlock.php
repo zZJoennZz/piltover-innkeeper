@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\AutoUuidModel as Model;
 
 class ScheduleBlock extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'uuid',
         'block_id',
         'type', // use enums
         'users_id',

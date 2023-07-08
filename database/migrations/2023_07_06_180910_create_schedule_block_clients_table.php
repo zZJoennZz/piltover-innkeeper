@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('clients_id');
             $table->timestamps();
 
-            $table->foreign('schedule_blocks_id')->references('id')->on('schedule_blocks_id');
+            $table->foreign('schedule_blocks_id')->references('id')->on('schedule_blocks');
             $table->foreign('clients_id')->references('id')->on('clients');
         });
     }

@@ -11,7 +11,7 @@ class Client extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'client_id',
+        'uuid',
         'email',
         'password',
     ];

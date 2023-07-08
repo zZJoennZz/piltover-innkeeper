@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\AutoUuidModel as Model;
 
 class Amenity extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'uuid',
         'name',
         'description',
         'is_enabled',
