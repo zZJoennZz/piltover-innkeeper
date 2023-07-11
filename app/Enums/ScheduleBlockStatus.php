@@ -2,9 +2,9 @@
 
 namespace App\Enums;
 
-enum ScheduleBlockStatus:string 
+enum ScheduleBlockStatus: string
 {
-    case Pending = 'pending'; 
+    case Pending = 'pending';
     case Confirmed = 'confirmed';
     case Reserved = 'reserved';
     case CheckedIn = 'checked_in';
