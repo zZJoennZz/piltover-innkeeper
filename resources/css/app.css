@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: "Raleway", sans-serif;
+    @apply bg-slate-100;
+}
+
+.wrapper {
+    @apply w-11/12 md:w-10/12 lg:w-8/12 m-auto;
+}
+
+.form-error {
+    @apply text-red-500 mt-1 text-sm;
+}
+
+label {
+    @apply block text-sm uppercase mb-1;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    @apply w-full bg-slate-200 border border-slate-300 p-2 outline-0;
+}
