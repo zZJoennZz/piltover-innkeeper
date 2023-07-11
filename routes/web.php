@@ -1,11 +1,9 @@
 <?php
 
-use App\Enums\ScheduleBlockType;
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\Resource\RoomTypeController;
 use Illuminate\Support\Facades\Route;
-
-use App\Models\ScheduleBlock;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +16,15 @@ use Illuminate\Support\Str;
 |
 */
 
-Route::get('/', [AppController::class, 'index']);
+Route::get('/', function () {
+    return "Hello";
+});
+
+Route::get('/user-login', [UserController::class, 'login'])->name('user-login.show');
+
+Route::get('/dashboard', [AppController::class, 'index'])->name('dashboard.show');
+Route::get('/appointments', [AppController::class, 'appointments']);
+Route::middleware(['user'])->group(function () {
+    Route::get('/settings', [AppController::class, 'settings']);
+    Route::post('/room-type', [RoomTypeController::class, 'store']);
+});
