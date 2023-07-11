@@ -8,9 +8,18 @@ use Inertia\Response;
 class AppController extends Controller
 {
     //
-    public function index(): Response {
-        return Inertia::render('Index', [
-            'title' => 'Laravel 10, Inertia.js, Svelte, Tailwind CSS'
-        ]);
+    public function index(): Response
+    {
+        return Inertia::render('Index');
+    }
+
+    public function settings(): Response
+    {
+        return Inertia::render('Settings');
+    }
+
+    public function appointments(): Response
+    {
+        return Inertia::render('Appointments');
     }
 }
