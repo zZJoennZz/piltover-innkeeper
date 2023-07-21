@@ -9,8 +9,23 @@
         UserIcon,
         MenuIcon,
     } from "svelte-feather-icons";
+    import { useForm } from "@inertiajs/svelte";
+
+    let frmData = useForm();
 
     let isMobileMenuOpen = false;
+
+    function performLogout() {
+        $frmData.post('/user-logout', {
+            preserveScroll: true,
+            onSuccess: () => {
+                console.log("Success");
+            },
+            onError: () => {
+                console.log("Error");
+            }
+        });
+    }
 </script>
 
 <div class="top-nav">
@@ -40,10 +55,14 @@
                     <div class="text-cyan-600">Settings</div>
                 </div>
                 <div class="flex">
-                    <div class="text-gray-300 flex-grow">
-                        <LogOutIcon />
-                    </div>
-                    <div class="text-cyan-600">Logout</div>
+                    <form on:submit|preventDefault={performLogout} class="w-full">
+                        <button class="flex w-full" type="submit">
+                            <div class="text-gray-300 flex-grow">
+                                <LogOutIcon />
+                            </div>
+                            <div class="text-cyan-600">Logout</div>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

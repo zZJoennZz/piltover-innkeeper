@@ -16,6 +16,8 @@ class AdminAccountSeeder extends Seeder
         //
         User::create([
             'username' => 'admin',
+            'uuid' => generateUuid(),
+            'email' => 'admin@admin.com',
             'password' => env('ADMIN_INITIAL_PW') ?? 'admin',
         ]);
     }

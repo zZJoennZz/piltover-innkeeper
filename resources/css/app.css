@@ -22,5 +22,9 @@ label {
 input[type="text"],
 input[type="number"],
 input[type="password"] {
-    @apply w-full bg-slate-200 border border-slate-300 p-2 outline-0;
+    @apply w-full bg-slate-200 border border-slate-300 p-2 outline-0 focus:bg-white transition-all ease-in-out duration-300;
+}
+
+.btn-primary {
+    @apply px-3 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors ease-in-out duration-150;
 }
